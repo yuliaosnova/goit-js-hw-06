@@ -8,14 +8,7 @@
 // Для доступа к элементам формы используй свойство elements.
 // Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset.
 
-const form = document.querySelector('.login-form')
-// const mailLabelEl = formEl.firstElementChild;
-// const mailInputEl = document.querySelector('input[name = "email"]');
-// const passwordLabelEl = mailLabelEl.nextElementSibling;
-// const passwordInputEl = document.querySelector('input[name = "password"]');
-// const btn = document.querySelector('button');
-
-
+const form = document.querySelector('.login-form');
 
 form.addEventListener("submit", handleSubmit);
 

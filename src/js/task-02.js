@@ -18,21 +18,17 @@ const ingredients = [
 
 const list = document.querySelector("#ingredients");
 
-const elements = [];
-
-
-for (let i =  0; i < ingredients.length; i += 1){
-	
-	const ingredient = ingredients[i];
-
+const elements = ingredients.map(ingredient => {
 	const itemEl = document.createElement('li');
 	
 	itemEl.textContent = ingredient;
 
 	itemEl.classList.add("item");
 
-	elements.push(itemEl);
-}
+	return itemEl;
+});
+
+console.log(elements);
 
 list.append(...elements);
 console.log(elements);

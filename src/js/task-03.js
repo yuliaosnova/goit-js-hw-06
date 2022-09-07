@@ -1,14 +1,13 @@
-// Напиши скрипт для создания галереи изображений по массиву данных. 
+// Напиши скрипт для создания галереи изображений по массиву данных.
 // В HTML есть список ul.gallery.
 
 // <ul class="gallery"></ul>
 
-// Используй массив объектов images для создания элементов <img> вложенных в <li>. 
+// Используй массив объектов images для создания элементов <img> вложенных в <li>.
 // Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
 
 // Все элементы галереи должны добавляться в DOM за одну операцию вставки.
 // Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
-
 
 const images = [
   {
@@ -40,26 +39,31 @@ const images = [
 //   galleryEl.style.listStyle = "none";
 // }
 
-
 // var 2
 const galleryEl = document.querySelector(".gallery");
 
-const elements = images.map(image => {
-	const item = document.createElement('li');
-	item.classList.add('item-galery');
-	item.insertAdjacentHTML("afterbegin", 
-	`<img src="${image.url}" alt = "${image.alt}" height = 180px, width = 300px>`);
-	
-	return item;
-}); 
+const elements = images.map((image) => {
 
-console.log(elements);
+   return `<li class = item-galery>
+	<img src="${image.url}" alt = "${image.alt}" height = 180px, width = 300px>
+	</li>`;
 
-galleryEl.append(...elements);
+});
+
+galleryEl.insertAdjacentHTML(
+	"afterbegin",
+	elements.join()
+ );
 
 galleryEl.style.display = "flex";
-  galleryEl.style.gap = "5px";
-  galleryEl.style.listStyle = "none";
+galleryEl.style.gap = "5px";
+galleryEl.style.listStyle = "none";
+
+
+
+
+
+
 
 
 
@@ -74,5 +78,3 @@ galleryEl.style.display = "flex";
 //   myImg.style.height = "180px";
 //   myImg.style.width = "300px";
 // });
-
-
